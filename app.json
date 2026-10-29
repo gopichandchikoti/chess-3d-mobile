@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Chess 3D",
+    "slug": "chess-3d-mobile",
+    "version": "1.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.chess3d.offline"
+    },
+    "android": {
+      "package": "com.chess3d.offline",
+      "permissions": []
+    },
+    "updates": {
+      "enabled": false
+    },
+    "plugins": ["./plugins/with-gl-keep.cjs"]
+  }
+}

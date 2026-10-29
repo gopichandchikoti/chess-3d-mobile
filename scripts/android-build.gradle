@@ -1,0 +1,14 @@
+// Configure the generated project through Gradle's supported DSL instead of editing native output.
+gradle.beforeProject { target ->
+    ['com.android.application','com.android.library'].each { plugin ->
+        target.plugins.withId(plugin) {
+            target.androidComponents.finalizeDsl { android ->
+                android.externalNativeBuild.cmake.version = System.getenv('CHESS3D_CMAKE_VERSION')
+                def react = target.extensions.findByName('react')
+                if (react != null && System.getenv('CHESS3D_HERMES') != null) {
+                    react.hermesCommand = System.getenv('CHESS3D_HERMES')
+                }
+            }
+        }
+    }
+}

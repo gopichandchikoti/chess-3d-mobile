@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+  unrs-resolver: true
+  "@parcel/watcher": true
+# Expo's CLI runs at build time; keep it out of the runtime dependency graph.
+overrides:
+  "expo>@expo/cli": "-"
